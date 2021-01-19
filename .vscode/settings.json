@@ -1,0 +1,20 @@
+{
+    "[json]": {
+
+        "editor.quickSuggestions": {
+            "strings": true
+        },
+        "editor.suggest.insertMode": "replace"
+    },
+"htmlhint.options": {
+    "spec-char-escape": false,
+    "doctype-first": false
+},
+    
+"files.associations": {
+    "*.ejs": "html"
+},
+"emmet.includeLanguages": {
+    "ejs": "html"
+}
+}
