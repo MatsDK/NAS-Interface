@@ -4,7 +4,7 @@ const userModel = require("../models/userModel");
 const { generateAccessToken } = require("../jwtTokens");
 
 const authenticateToken = async (req, res, next) => {
-  const redirectPage = req.url == "/" ? "/auth/home" : "/auth/login";
+  const redirectPage = "/auth/login";
 
   const token = req.cookies.jwt;
   if (!token) return res.status(200).redirect(redirectPage);

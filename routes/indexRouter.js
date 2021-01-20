@@ -1,8 +1,8 @@
 const express = require("express");
 const router = express.Router();
+
 const AdmZip = require("adm-zip");
 const dree = require("dree");
-
 const fs = require("fs-extra");
 const { v4: uuidv4 } = require("uuid");
 const multer = require("multer");
@@ -157,9 +157,7 @@ router.post("/copyData", (req, res) => {
       `${dataFolder}${req.user._id}/${path.srcPath}`,
       `${dataFolder}${req.user._id}/${req.body.dest}${path.fileName}`,
       (err) => {
-        if (err) {
-          return console.error(err);
-        }
+        if (err) return console.error(err);
       }
     );
   });
@@ -173,9 +171,7 @@ router.post("/moveData", (req, res) => {
       `${dataFolder}${req.user._id}/${path.srcPath}`,
       `${dataFolder}${req.user._id}/${req.body.dest}${path.fileName}`,
       (err) => {
-        if (err) {
-          return console.error(err);
-        }
+        if (err) return console.error(err);
       }
     );
   });
@@ -188,13 +184,11 @@ router.post("/delete", (req, res) => {
       .split("#")[1]
       .replace(/&/g, "/")}`;
     if (fs.existsSync(itemPath)) {
-      if (item.split("#")[0] == "directory") {
-        deleteFolderRecursive(itemPath);
-      } else {
+      if (item.split("#")[0] == "directory") deleteFolderRecursive(itemPath);
+      else
         fs.unlink(itemPath, (err) => {
           if (err) throw err;
         });
-      }
     }
   });
   res.sendStatus(200);

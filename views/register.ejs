@@ -10,15 +10,50 @@
       integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ=="
       crossorigin="anonymous"
     ></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Andika+New+Basic&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/css/authPages.css" />
   </head>
   <body>
-    <a href="/auth/login">login</a>
-    <form class="register-form">
-      <input type="text" class="name-input" placeholder="username..." />
-      <input type="email" class="email-input" placeholder="email..." />
-      <input type="password" class="password-input" placeholder="password" />
-      <button type="submit">submit</button>
-    </form>
+    <div class="mainContainer">
+      <h1>Register</h1>
+      <form class="register-form">
+        <label for="username">Username</label>
+        <input
+          id="username"
+          name="username"
+          type="text"
+          class="name-input"
+          placeholder="Enter your username"
+        />
+        <label for="email">Email</label>
+
+        <input
+          name="email"
+          id="email"
+          type="email"
+          class="email-input"
+          placeholder="Enter you email"
+        />
+        <label for="password">Password</label>
+
+        <input
+          name="password"
+          id="password"
+          type="password"
+          class="password-input"
+          placeholder="Enter your password"
+        />
+        <div class="submitButtonWrapper">
+          <button type="submit">submit</button>
+        </div>
+      </form>
+      <div class="bottomContainer">
+        <a href="/auth/login">Login</a>
+      </div>
+    </div>
     <script src="../register.js"></script>
   </body>
 </html>

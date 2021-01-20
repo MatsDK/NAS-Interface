@@ -679,11 +679,12 @@ const navBarUserData = document.querySelector(".userDataInfo");
 if (userData) navBarUserData.innerHTML = userData.name;
 
 const logout = () => {
-  axios({
-    url: "/auth/logout",
-    method: "GET",
-  }).then((res) => {
-    if (res.data.redirect) window.location = res.data.redirect;
-    console.log(res);
-  });
+  // axios({
+  //   url: "/auth/logout",
+  //   method: "GET",
+  // }).then((res) => {
+  //   if (res.data.redirect) window.location = res.data.redirect;
+  //   console.log(res);
+  // });
+  window.location = "/auth/logout";
 };

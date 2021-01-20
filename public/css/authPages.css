@@ -1,0 +1,112 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Andika New Basic", sans-serif;
+  outline: none;
+  text-decoration: none;
+  color: var(--textColor);
+}
+:root {
+  --darkBlue: #201f1e;
+  --lightBlue: #323130;
+  --checkBoxCol: #201f1e;
+  --lighterBlue: #161514;
+  --lighterBg: #323130;
+  --shadowCol: rgba(2, 2, 2, 0.397);
+  --textColor: #f2f8f8;
+  --mainContainerBg: #161514;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  display: grid;
+  place-items: center;
+  background-color: var(--mainContainerBg);
+}
+
+.mainContainer {
+  width: 400px;
+  padding: 10px 3px;
+  display: flex;
+  flex-direction: column;
+  height: fit-content;
+}
+
+.mainContainer form {
+  display: flex;
+  flex-direction: column;
+}
+.mainContainer form label {
+  margin-left: 10px;
+}
+
+h1 {
+  margin-bottom: 10px;
+  margin-left: 10px;
+}
+.bottomContainer {
+  width: 100%;
+  display: grid;
+  place-items: center;
+
+  padding: 10px;
+}
+.bottomContainer a {
+  background-color: transparent;
+  font-size: 17px;
+  border-bottom: solid 1px transparent;
+  transition: 0.1s ease;
+  padding: 0 2px;
+  width: fit-content;
+  text-align: center;
+  height: 30px;
+}
+.bottomContainer a:hover {
+  border-bottom: solid 1px var(--textColor);
+}
+
+.mainContainer form button {
+  width: 112px;
+  background-color: var(--lightBlue);
+  font-size: 20px;
+  border: 0;
+  cursor: pointer;
+  transition: 0.2s ease;
+  padding: 0 20px;
+  text-align: center;
+  height: 36px;
+  border-radius: 18px;
+  box-shadow: 0 0 10px var(--shadowCol);
+}
+.mainContainer form button:hover {
+  background-color: var(--textColor);
+  color: var(--mainContainerBg);
+  font-size: 20px;
+  transition: 0.2s ease;
+  padding: 0 20px;
+  text-align: center;
+  height: 36px;
+  border-radius: 18px;
+}
+
+.mainContainer form .submitButtonWrapper {
+  margin-top: 10px;
+  width: 100%;
+  display: grid;
+  place-items: center;
+}
+
+.mainContainer form input {
+  width: 100%;
+  height: 50px;
+  font-size: 21px;
+  padding: 0 15px;
+  background-color: var(--darkBlue);
+  margin: 0 auto;
+  margin-bottom: 10px;
+  border: 0;
+  border-radius: 10px;
+  box-shadow: 0 0 10px var(--shadowCol);
+}

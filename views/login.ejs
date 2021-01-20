@@ -10,14 +10,40 @@
       integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ=="
       crossorigin="anonymous"
     ></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Andika+New+Basic&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/css/authPages.css" />
   </head>
   <body>
-    <a href="/auth/register">register</a>
-    <form class="login-form">
-      <input type="email" class="email-input" placeholder="email..." />
-      <input type="password" class="password-input" placeholder="password" />
-      <button type="submit">submit</button>
-    </form>
-    <script src="../login.js"></script>
+    <div class="mainContainer">
+      <h1>Login</h1>
+      <form class="login-form">
+        <label for="email">Email</label>
+        <input
+          type="email"
+          class="email-input"
+          name="email"
+          id="email"
+          placeholder="Enter your email addres"
+        />
+        <label for="password">Password</label>
+        <input
+          type="password"
+          id="password"
+          name="password"
+          class="password-input"
+          placeholder="Enter you password"
+        />
+        <div class="submitButtonWrapper">
+          <button type="submit">login</button>
+        </div>
+      </form>
+      <div class="bottomContainer">
+        <a href="/auth/register">register</a>
+      </div>
+      <script src="../login.js"></script>
+    </div>
   </body>
 </html>

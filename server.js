@@ -32,4 +32,6 @@ const filesRouter = require("./routes/indexRouter");
 app.use("/auth", authRouter);
 app.use("/", filesRouter);
 
-app.listen(3000, () => console.log("server listening"));
+const port = process.env.PORT || 3000;
+
+app.listen(port, () => console.log(`server listening on port ${port}`));

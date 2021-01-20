@@ -65,16 +65,16 @@ router
           refreshToken: "empty",
         });
 
+        await user.save();
+
         const userDataFolderPath = `../data/${user._id}`;
         if (!fs.existsSync(userDataFolderPath))
           fs.mkdirSync(userDataFolderPath);
 
-        await user.save();
         res.status(201).json({ redirect: "/auth/login" });
       }
     } catch (err) {
-      console.log(err);
-      res.status(400).json({ msg: err.message });
+      res.json({ msg: err.message });
     }
   });
 
@@ -84,8 +84,7 @@ router.get("/logout", authenticateToken, async (req, res) => {
       req.cookies.jwt,
       process.env.ACCESS_TOKEN_SECRET
     );
-    if (!decodedCookie)
-      return res.status(200).json({ redirect: "/auth/login" });
+    if (!decodedCookie) return res.status(200).redirect("/auth/login");
 
     await userModel.findByIdAndUpdate(
       decodedCookie.user,
@@ -100,7 +99,7 @@ router.get("/logout", authenticateToken, async (req, res) => {
     res
       .status(200)
       .cookie("jwt", "", { maxAge: 0, httpOnly: true })
-      .json({ redirect: "/auth/login" });
+      .redirect("/auth/login");
   } catch (err) {
     res.status(400).json({ msg: err.message });
   }

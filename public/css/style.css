@@ -1107,7 +1107,7 @@ p.currentDir {
   transition: 0.15s ease;
   background-color: var(--lightBlue);
   border: 0;
-  border-radius: 3px;
+  border-radius: 6px;
   padding: 5px 10px;
   margin: 0 10px;
   font-size: 18px;
@@ -1115,3 +1115,11 @@ p.currentDir {
 .rightNavBar button:hover {
   background-color: var(--lighterBlue);
 }
+
+/* @font-face {
+  font-family: "file-icons";
+  font-weight: normal;
+  font-style: normal;
+  src: url("https://cdn.jsdelivr.net/npm/@exuanbo/file-icons-js@latest/fonts/file-icons.woff2")
+    format("woff2");
+} */
